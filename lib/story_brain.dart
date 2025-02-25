@@ -1,14 +1,36 @@
-import 'story.dart'; 
+import 'story.dart';
 
 class StoryBrain {
   String getStory() {
     return _storyData[0].storyTitle;
   }
-}
 
-//TODO: Step 7 - Uncomment the lines below to include storyData as a private property in StoryBrain. Hint: You might need to change something in story.dart to make this work.
+  String getChoice1() {
+    return _storyData[0].choice1;
+  }
 
-List<Story> _storyData = [
+  String getChoice2() {
+    return _storyData[0].choice2;
+  }
+
+  int storyNumber = 0;
+
+  void nextStory(int choiceNumber) {
+    if (choiceNumber == 1 && storyNumber == 0) {
+      storyNumber == 2;
+    } else if (choiceNumber == 2 && storyNumber == 0) {
+      storyNumber == 1;
+    } else if (choiceNumber == 1 && storyNumber == 1) {
+      storyNumber == 2;
+    } else if (choiceNumber == 2 && storyNumber == 1) {
+      storyNumber == 3;
+    } else if (choiceNumber == 1 && storyNumber == 2) {
+      storyNumber == 5;
+    } else if (choiceNumber == 2 && storyNumber == 2) {
+      storyNumber == 4;
+  }} 
+
+final List<Story> _storyData = [
   Story(
       storyTitle:
           'Your car has blown a tire on a winding road in the middle of nowhere with no cell phone reception. You decide to hitchhike. A rusty pickup truck rumbles to a stop next to you. A man with a wide brimmed hat with soulless eyes opens the passenger door for you and asks: "Need a ride, boy?".',
@@ -47,7 +69,6 @@ List<Story> _storyData = [
 
 
 
-//TODO: Step 8 - Create a method called getStory() that returns the first storyTitle from _storyData.
 
 //TODO: Step 11 - Create a method called getChoice1() that returns the text for the first choice1 from _storyData.
 
